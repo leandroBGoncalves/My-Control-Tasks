@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import ContainerTasks from '../components/ContainerTasks'
 
 export default function Home() {
   return (
@@ -6,9 +7,7 @@ export default function Home() {
       <Head>
         <title>Control Tasks</title>
       </Head>
-      <main>
-
-      </main>
+      <ContainerTasks />
     </div>
   )
 }
