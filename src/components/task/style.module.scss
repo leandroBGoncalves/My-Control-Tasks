@@ -25,7 +25,7 @@
     }
 
     &:hover {
-        opacity: 0.8;
+        filter: contrast(1.4);
         -moz-transform: scale(1.01);
         -webkit-transform: scale(1.01);
         transform: scale(1.01);

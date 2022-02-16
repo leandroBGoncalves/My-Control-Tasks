@@ -3,6 +3,7 @@ import moment from 'moment';
 import Task from '../task';
 
 import styles from './style.module.scss';
+import ModalNewTask from '../ModalNewTask';
 
 export default function ContainerTasks() {
     const [tasks, setTasks] = useState([
@@ -46,6 +47,7 @@ export default function ContainerTasks() {
                     {tasks.map((task) => <Task data={task} />)}
                 </tbody>
             </table>
+            <ModalNewTask />
         </main>
     );
 }
