@@ -1,12 +1,11 @@
 import { useContext, useState } from 'react';
-import { ref, set } from "firebase/database";
 import { AuthContext } from '../../Contexts/AuthContext';
 import { FaTasks, FaCloudUploadAlt } from 'react-icons/fa'
 
 import moment from 'moment';
 import Dialog from '@mui/material/Dialog';
 
-import innerData from '../../pages/api/api'
+import { innerData } from '../../pages/api/api'
 
 import styles from './style.module.scss';
 

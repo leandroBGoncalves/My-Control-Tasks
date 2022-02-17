@@ -1,6 +1,6 @@
 import { supabase } from '../../services/supaBaseClient';
 
-export default async function innerData( checked, newTask ) {
+export async function innerData( checked, newTask ) {
     const { data, error } = await supabase
     .from('tascks_control').insert([
         {
