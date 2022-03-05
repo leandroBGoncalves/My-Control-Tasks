@@ -4,7 +4,7 @@ import { supabase } from '../../services/supaBaseClient'
 
 import styles from './style.module.scss';
 
-export default function Task({ data }) {
+export default function Task({ data, setGetData }) {
     const idItem = data.id;
     const [status, setStatus] = useState();
     const [currentyClass, setCurrentyClass] = useState(styles.rowTask);
@@ -23,8 +23,10 @@ export default function Task({ data }) {
         }
     }
 
+
     useEffect(() => {
         handleStatus()
+        setGetData(true)
     }, [checkTask])
 
     async function updateStatusTasck() {
