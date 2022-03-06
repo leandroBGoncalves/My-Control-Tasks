@@ -1,5 +1,6 @@
 import { supabase } from '../../services/supaBaseClient';
 
+
 export async function innerData( checked, newTask ) {
     const { data, error } = await supabase
     .from('tascks_control').insert([
@@ -9,8 +10,6 @@ export async function innerData( checked, newTask ) {
         }
     ])
     if (error) {
-        window.alert(`${error}`)
-    } else {
-        console.log(data)
+        return window.alert(`${error}`)
     }
 }

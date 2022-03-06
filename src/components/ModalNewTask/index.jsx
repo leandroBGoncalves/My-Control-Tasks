@@ -10,13 +10,17 @@ import { innerData } from '../../pages/api/api'
 import styles from './style.module.scss';
 
 export default function ModalNewTask() {
-    const { openModalNewTask, closeModalNewTask } = useContext(AuthContext)
+    const { openModalNewTask, closeModalNewTask, getAllData } = useContext(AuthContext)
     const [newTask, setNewTask] = useState('');
 
     const checked = false;
 
     async function setData() {
         await innerData( checked, newTask )
+        .then(() => {
+            closeModalNewTask()
+            getAllData()
+        })
     }
 
 
@@ -34,6 +38,7 @@ export default function ModalNewTask() {
                     type="text" 
                     placeholder="Enter your task here" 
                     onChange={(e) => setNewTask(e.target.value)}
+                    autoFocus
                     />
                     <button onClick={setData}><FaCloudUploadAlt />Send</button>
                 </div>
